@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f6f2e8;
+  --color-paper-deep: #efe9dc;
+  --color-ink: #1b1a16;
+  --color-ink-soft: #6b6558;
+  --color-line: #e1dac9;
+  --color-accent: #ffd43b;
+  --color-accent-strong: #f2bf1b;
+
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "SF Mono", Menlo, monospace;
+
+  --shadow-card: 0 30px 70px -50px rgba(27, 26, 22, 0.55);
+  --shadow-lift: 0 18px 40px -30px rgba(27, 26, 22, 0.45);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
+@utility paper-dots {
+  background-image: radial-gradient(rgba(27, 26, 22, 0.075) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
